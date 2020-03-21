@@ -2,6 +2,9 @@
 
 react-tutorial-with-tsベースにCRUDアプリのフロント部分を作成する
 
+## ref.
+https://note.com/tkugimot/n/nf7fe751298b1
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
