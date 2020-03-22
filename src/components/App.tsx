@@ -1,13 +1,14 @@
 import React from 'react';
 import Form from './Form';
 import List from  './List';
+import {TodoInterface} from  './List';
 
 interface AppPropsInterface {
 
 }
 
 interface AppStateInterface {
-  todo: any[];
+  todo: TodoInterface[];
 }
 
 export default class App extends React.Component<AppPropsInterface, AppStateInterface> {
@@ -16,14 +17,12 @@ export default class App extends React.Component<AppPropsInterface, AppStateInte
     this.state = {
       todo: []
     };
-    console.log(typeof this.handleAdd);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
   }
 
   // データ保存
   handleAdd(e: any){
-    console.log(typeof e);
     console.log(e);
     // リダイレクト防止
     e.preventDefault();

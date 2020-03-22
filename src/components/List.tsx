@@ -9,14 +9,22 @@ let btn = {
 };
 
 interface ListPropsInterface {
-  todos: any[];
+  todos: TodoInterface[];
   handleRemove: (i: number)=> void;
+}
+
+export interface TodoInterface {
+  title: string;
 }
 
 const List = (props: ListPropsInterface) => (
   <ul className="siimple-list">
     {props.todos.map((todo, i) => {
-      return <li key={i} className="siimple-list-item siimple--bg-white" style={style}>{todo.title} <span className="siimple-tag siimple-tag--error siimple-hover" style={btn} onClick={() => props.handleRemove(i)}>Delete</span></li>
+      return (
+      <li key={i} className="siimple-list-item siimple--bg-white" style={style}>
+        {todo.title} <span className="siimple-tag siimple-tag--error siimple-hover" style={btn} onClick={() => props.handleRemove(i)}>Delete</span>
+      </li>
+      )
     })};
   </ul>
 );
