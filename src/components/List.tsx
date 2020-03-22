@@ -10,7 +10,7 @@ let btn = {
 
 interface ListPropsInterface {
   todos: any[];
-  handleRemove: any;
+  handleRemove: (i: number)=> void;
 }
 
 const List = (props: ListPropsInterface) => (

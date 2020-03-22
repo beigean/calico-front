@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface FormPropsInterface {
-    handleAdd: any;
+    handleAdd: (e: any)=> void;
 }
 
 const Form = (props: FormPropsInterface) => (
