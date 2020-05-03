@@ -1,7 +1,10 @@
 import React from 'react';
+import axios from 'axios';
 import Form from './Form';
 import List from  './List';
 import {TodoInterface} from  './List';
+
+const host = 'http://localhost:8080';
 
 interface AppPropsInterface {
 
@@ -21,13 +24,17 @@ export default class App extends React.Component<AppPropsInterface, AppStateInte
     this.handleRemove = this.handleRemove.bind(this);
   }
 
+  // componentDidMount() {
+
+  // }
+
   // データ保存
   handleAdd(e: any){
     console.log(e);
     // リダイレクト防止
     e.preventDefault();
     // フォームから受け取ったデータをオブジェクトに挿入して、stateのtodo配列に追加
-    this.state.todo.push({title: e.target.title.value}); // まだ保存されていない
+    this.state.todo.push({user_id: 0, todo: e.target.title.value}); // まだ保存されていない
     // setStateを使ってstateを上書き
     this.setState({todo: this.state.todo}); // 保存完了
     // inputのvalueを空に
